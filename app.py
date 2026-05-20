@@ -14,7 +14,6 @@ figure2 = px.pie(ventes_produit, values='qte', names='produit', title='Quantité
 figure2.write_html('ventes-par-produit.html')
 print('ventes-par-produit.html généré avec succès !')
 
-
 # Page 3 : Chiffre d'affaires par produit
 données['ca'] = données['prix'] * données['qte']
 ca_produit = données.groupby('produit', as_index=False)['ca'].sum()
