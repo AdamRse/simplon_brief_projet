@@ -1,0 +1,6 @@
+services:
+  generateur-stats:
+    build: .
+    container_name: python_plotly_app
+    volumes:
+      - .:/app

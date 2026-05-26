@@ -1,0 +1,33 @@
+a. Chiffre d'affaire total
+Requêtes SQL :
+    SELECT SUM(prix * qte) AS chiffre_affaires_total
+    FROM ventes;
+
+Résultat :
+    chiffre_affaires_total
+    44825
+-------------------------------------------
+b. Ventes par produit
+Requêtes SQL :
+    SELECT produit, SUM(qte) AS quantite_totale, SUM(prix * qte) AS chiffre_affaires_produit
+    FROM ventes
+    GROUP BY produit
+    ORDER BY chiffre_affaires_produit DESC;
+
+Résultat :
+    produit     quantite_totale chiffre_affaires_produit
+    Produit A   1750            17500
+    Produit B   1055            15825
+    Produit C   575             11500
+-------------------------------------------
+c.Ventes par région.
+Requêtes SQL :
+    SELECT region, SUM(prix * qte) AS chiffre_affaires_region
+    FROM ventes
+    GROUP BY region
+    ORDER BY chiffre_affaires_region DESC;
+
+Résultat :
+    region  chiffre_affaires_region
+    Sud     24100
+    Nord    20725
